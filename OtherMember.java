@@ -1,6 +1,7 @@
 package treelinecalculationsalgorithm;
 
 import java.util.ArrayList;
+import javafx.scene.control.*;
 
 // Member Class
 public class Member 
@@ -12,17 +13,21 @@ public class Member
     private Member mother;              // First Parent of the Member
     private Member father;              // Second Parent of the Member
     private Member spouse;              // Spouse of the Member
+    private boolean drawnFlag;          // Has the member been drawn on the GUI?
+    private Button memberButton;        // Button tied to the Member that is displayed on the GUI
 
     // Default Constructor
     public Member()
     {
-        name       = "";
-        biography  = "";
-        children   = new ArrayList<>();
-        childCount = 0;
-        mother     = null;
-        father     = null;
-        spouse     = null;
+        name         = "";
+        biography    = "";
+        children     = new ArrayList<>();
+        childCount   = 0;
+        mother       = null;
+        father       = null;
+        spouse       = null;
+        drawnFlag    = false;
+        memberButton = null;
     }
 
     // Constructor with a Name and Biography parameters
@@ -35,6 +40,8 @@ public class Member
         mother         = null;
         father         = null;
         spouse         = null;
+        drawnFlag      = false;
+        memberButton   = null;
     }
 
     // Get Member's Name
