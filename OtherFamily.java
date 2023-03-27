@@ -1,27 +1,26 @@
 package treelinecalculationsalgorithm;
 
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.ArrayList;
 
 // Family Class
 public class Family
 {
-    HashSet<Member> FamilyMembers; // List of Members in the Family
-    Member root;                   // First Member added to the Family
+    ArrayList<Member> familyMembers; // List of Members in the Family
+    Member root;                     // First Member added to the Family
 
     // Default Constructor
     public Family()
     {
-        FamilyMembers = new HashSet<>();
+        familyMembers = new ArrayList<>();
         root = null;
     }
 
     // Adds a Member to the Tree
     public void addMember(Member newMember)
     {
-        FamilyMembers.add(newMember);
+        familyMembers.add(newMember);
 
-        if(FamilyMembers.size() == 1)
+        if(familyMembers.size() == 1)
         {
             root = newMember;
         }
@@ -30,28 +29,28 @@ public class Family
     // Removes a Member from the Tree
     public void removeMember(Member targetMember)
     {
-        if(FamilyMembers.contains(targetMember))
+        if(familyMembers.contains(targetMember))
         {
-            FamilyMembers.remove(targetMember);
+            familyMembers.remove(targetMember);
         }
     }
               
     // Clears all Members in the Tree
     public void clearMembers()
     {
-        FamilyMembers.clear();
+        familyMembers.clear();
     }
 
     // Returns the desired Member from the Tree
     public Member accessMember(Member targetMember)
     {
-        if(FamilyMembers.contains(targetMember))
+        if(familyMembers.contains(targetMember))
         {
-            for(Member member : FamilyMembers)
+            for(int count = 0; count < familyMembers.size(); count++)
             {
-                if(member.equals(targetMember))
+                if(familyMembers.get(count) == targetMember)
                 {
-                    return member;
+                    return familyMembers.get(count);
                 }
             }
         }
